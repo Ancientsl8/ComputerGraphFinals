@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1717117270}
-  groundedValue: 0.9
+  groundedValue: 0.96
 --- !u!1 &1858677894
 GameObject:
   m_ObjectHideFlags: 0
