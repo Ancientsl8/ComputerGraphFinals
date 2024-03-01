@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RbMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     private float moveInput;
     [SerializeField]private float speed = 5;
     //ground check stuff
     [SerializeField] private Transform groundCheck;
     private float jumpForce = 5;
-    private bool isGrounded;
+    public bool isGrounded;
     public float checkRadius;
     public LayerMask whatIsGround;
     // Start is called before the first frame update
