@@ -38,6 +38,12 @@ public class CameraController : MonoBehaviour
             //Sets the camera viewpoint to the left of the player
             lookOffset = Mathf.Lerp(lookOffset, -lookAheadDistance, lookAheadSpeed * Time.deltaTime);
         }
+
+        if (rbMovement.rb.velocity.x == 0)
+        {
+            //Sets the camera viewpoint to the left of the player
+            lookOffset = Mathf.Lerp(lookOffset, 0, lookAheadSpeed * Time.deltaTime);
+        }
         //moves the point where the camera follows based on movement;
         targetPoint.x = playerPosition.transform.position.x + lookOffset;
 
