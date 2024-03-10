@@ -9,7 +9,7 @@ public class RbMovement : MonoBehaviour
     [SerializeField]private float speed = 5;
     //ground check stuff
     [SerializeField] private Transform groundCheck;
-    private float jumpForce = 5;
+    private float jumpForce = 7;
     public bool isGrounded;
     public float checkRadius;
     public LayerMask whatIsGround;

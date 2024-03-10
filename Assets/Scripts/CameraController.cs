@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform playerPosition;
     [SerializeField] private float moveSpeed;
     public RbMovement rbMovement;
-    public float lookAheadDistance = 5f, lookAheadSpeed = 3f;
+    public float lookAheadDistance = 2f, lookAheadSpeed = 3f;
     private float lookOffset;
     // Start is called before the first frame update
     void Start()
