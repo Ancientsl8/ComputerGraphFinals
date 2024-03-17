@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RbMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     private float moveInput;
-    [SerializeField]private float speed = 5;
+    [SerializeField] private float speed = 5;
     //ground check stuff
     [SerializeField] private Transform groundCheck;
     private float jumpForce = 7;
     public bool isGrounded;
     public float checkRadius;
     public LayerMask whatIsGround;
+    SceneManager sceneManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +35,18 @@ public class RbMovement : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpForce;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Reset();
+        }
+    }
+
+    private void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
