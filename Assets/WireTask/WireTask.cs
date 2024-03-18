@@ -18,6 +18,8 @@ public class WireTask : MonoBehaviour
 
     public bool isTaskComplete = false;
 
+    public MoveDoor moveDoor;
+
     private void Start()
     {
         avaiColors = new List<Color>(wireColors);
@@ -67,7 +69,9 @@ public class WireTask : MonoBehaviour
             if (connectedWires >= rightWires.Count)
             {
                 gameObject.SetActive(false);
+                moveDoor.OpenDoors();
                 Debug.Log("Completed");
+
             }
             else
             {
