@@ -19,6 +19,9 @@ public class WireTask : MonoBehaviour
     public bool isTaskComplete = false;
 
     public MoveDoor moveDoor;
+    public GameObject wirePanel;
+
+    public OpenWireTask openWireTask;
 
     private void Start()
     {
@@ -68,8 +71,11 @@ public class WireTask : MonoBehaviour
 
             if (connectedWires >= rightWires.Count)
             {
+                isTaskComplete = true;
                 gameObject.SetActive(false);
                 moveDoor.OpenDoors();
+                wirePanel.SetActive(false);
+                openWireTask.EnablePlayerMovement();
                 Debug.Log("Completed");
 
             }

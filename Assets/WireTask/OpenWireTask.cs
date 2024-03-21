@@ -9,12 +9,19 @@ public class OpenWireTask : MonoBehaviour
     public GameObject UI;
 
     private bool inTriggerZone = false;
+    private bool canMove = true;
+
+    public void EnablePlayerMovement()
+    {
+        canMove = true; // Enable player movement when wire task is completed
+    }
 
     private void Update()
     {
         if (inTriggerZone && Input.GetKeyDown(KeyCode.E))
         {
             wireTask.SetActive(true);
+            canMove = false;
         }
     }
 
@@ -28,14 +35,8 @@ public class OpenWireTask : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public bool CanMove()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            UI.SetActive(false);
-            wireTask.SetActive(false);
-            exclamation.SetActive(false);
-            inTriggerZone = false;
-        }
+        return canMove;
     }
 }
