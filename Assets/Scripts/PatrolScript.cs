@@ -6,7 +6,7 @@ public class PatrolScript : MonoBehaviour
 {
     [SerializeField] private Transform pointA;
     [SerializeField] private Transform pointB;
-    private float speed = 1f;
+    [SerializeField] private float speed;
     private bool point;
     // Start is called before the first frame update
     void Start()
