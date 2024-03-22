@@ -14,7 +14,6 @@ public class RbMovement : MonoBehaviour
     public bool isGrounded;
     public float checkRadius;
     public LayerMask whatIsGround;
-    SceneManager sceneManager;
 
     OpenWireTask openWireTask;
 
@@ -53,10 +52,20 @@ public class RbMovement : MonoBehaviour
         {
             Reset();
         }
+
+        if (collision.gameObject.tag == "Finish")
+        {
+            EndGame();
+        }
     }
 
     private void Reset()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void EndGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
